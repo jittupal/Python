@@ -34,6 +34,6 @@ data_analytics = "anything"
 a = "jittu"
 print(a)
 
-a = a + 2 #we can not convert string to int
+a = a + 2 #we can not convert string to int directly
 print(a)
 
