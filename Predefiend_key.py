@@ -5,7 +5,7 @@ b = 3.5
 print(type(b))
  # type tell what is the datatype we used
 c = a * "hii"  #this will print hii 3 times because a has value 3
-print(c)
+print(c) #this will make integer to string without any error
 print(type(c))
 
 com = 4+3j
@@ -33,3 +33,7 @@ data_analytics = "anything"
 
 a = "jittu"
 print(a)
+
+a = a + 2 #we can not convert string to int
+print(a)
+
