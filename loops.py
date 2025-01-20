@@ -73,3 +73,55 @@ print(" ")
 for i in range(1, 51, 2):  #range is from 1 to 50 having a difference of 2
     print(i, end=" ")
 
+print()
+print()
+
+#print the pattern
+
+row = 1
+while( row <= 4):   
+    col = 1          #everytime the loop re-run then this will be 1 for everytime
+    while(col <= row):      #it will check from 1 to until current row value
+        print("*", end=" ")
+        col = col + 1
+    print()
+    row = row + 1
+
+print()
+print()
+
+
+#using for loop
+
+for i in range(4):   #it will start from 0 to 3
+    for j in range(i+1):  #i + 1 specify how many time it will run
+        print("*", end=" ")
+        j = j + 1
+    print()
+    i = i + 1
+
+#square pattern
+
+print()
+print()
+
+row = 1
+while(row <= 3):
+    col = 1
+    while(col <= 3):
+        print("*", end=" ")
+        col = col + 1
+    print()
+    row = row + 1
+
+
+print()
+print()
+
+#using for loop
+for i in range(3):
+    for j in range(3):
+        print("*", end=" ")
+        j = j + 1
+    print()
+    i = i + 1
