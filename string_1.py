@@ -109,8 +109,64 @@ print(a == b) #false, because first character case is changed
 
 #checking if the product code is matched with scanned code or not
 product_code = "PV302"
-scanned_code = input("Enter the scanned code:  ")
+# scanned_code = input("Enter the scanned code:  ")
+scanned_code = "pv032"
+
 if product_code == scanned_code:
     print("You can go")
 else:
     print("Talk to manager")
+
+#string ordering
+name = ["jittu", "cittu", "mittu"]
+print(sorted(name))  # it will print the names in sorted apbhabetical order
+
+rank = ["first", "second", "fourth", "fifth", "six"]
+print(sorted(rank))
+
+location = "        delhi"
+print(location.strip())  #it will remove all the white space of left from the string
+
+colony = "   this     new      colony     is      my"
+print(colony.strip())   #it will only remove white spaces from left to the first string
+
+print(colony.split("    "))  #it will make separate string after every white spaces
+
+a = "i, am, jittu, pal"
+
+print(a.split(", ")) #it will make separate string after every , and whitespace
+
+address = "i live in mumbai \nthane forstudying \nin fifth class"
+print(address)  # \n print every line from newline
+
+#string formating
+template = "hello {}, welcome to {}"
+message = template.format("jittu" , "devops and cloud computing course") #the value of {} replaced with these
+print(message)
+
+invitation = "you are welcome {} to my {}"
+message = invitation.format("jittu", "birthday")
+print(message)
+
+#formated string litrals
+course = "devops + cloud computing"
+duration = 1
+print(f"my course is {course} and it duration is {duration} year") #it will replace the value of course and duration 
+
+celsius = 30
+print(f"{celsius} is equal to {(celsius * 9/5)+32}F")
+
+#strarswith
+name = "jittu"
+print(name.startswith("j")) #it will check if the string is start with this character or not
+print(name.startswith("jiit")) #it will give false
+
+#endswith
+print(name.endswith("ttu")) #true
+print(name.endswith("lit"))  #false
+
+a = "jittupal56438"
+print(a.isalnum()) #it check if string is alpha numerical or not
+
+a = "1234"
+print(a.isalpha()) #it will check if string is alphabetic or not
