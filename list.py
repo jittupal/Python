@@ -45,3 +45,78 @@ print(all_list)
 
 for item in all_list:
     print(item, end=" ")
+
+print()
+lis = ["apple", "mango", "orange", "banana"]
+lis.insert(1, "pineapple") #this will add pineapple before 1st index
+print(lis)
+
+lis1 = ["apple", "banana", "orange"]
+lis2 = ["pineapple", "watermelon", "kivi"]
+lis1.extend(lis2)  #this will add elements of lis2 in the lis1
+print(lis1)
+
+#repeatation
+lis3 = ["jittu"]
+lis3 = lis3 * 3 #it will add jittu 3 times in lis3
+print(lis3)
+
+lis4 = [12]
+lis4 = lis4 * 5
+print(lis4)
+
+lis5 = list(range(10)) #it will make a list of containing element from 0 to 9
+print(lis5)
+
+lis6 = list(range(0, 11, 2)) #it will make a list of even numbers
+print(lis6)
+
+#checking if the element is present or not in the list
+ans = "potato" in lis1  #it will check if the potato is in the lis1
+print(ans)
+
+ans = "orange" in lis1
+print(ans)  #true
+
+ans = "mango" not in lis1  #it will check if the element is not present in the list
+print(ans)
+
+ans = "banana" not in lis1
+print(ans)
+
+#shallow copy
+name = ["jittu", "kittu", "mittu"]
+new_lis = name   #it will copy all the elements of name list into new_lis
+print(new_lis)
+
+name.insert(2, "chittu")  #if we change in name list then it will also affect new lis
+print(name)
+print(new_lis) #new lis also have the updated element at the same index
+
+new_lis.insert(2, "littu") #new lis changes will also shown in name list
+print(new_lis)
+print(name)
+
+#deep copy
+
+b = name.copy()  #it will copy the element of name into b
+print(b)
+
+name.remove("littu")  #it will not affect the other list
+print(name)   #it one value is deleted
+print(b)  #it will remain same
+
+#sorting of list
+print(sorted(name))  #it will short the element by alphabetic
+print(sorted(lis1))
+
+#index function
+value = name.index("chittu")  #it will store the first index of element
+print(value)
+
+value = lis1.index(lis1[3])
+print(value)
+
+#lenght of list
+print(len(lis1)) #it will print total number of element present in lis1
+print(len(name))
