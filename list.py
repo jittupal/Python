@@ -120,3 +120,60 @@ print(value)
 #lenght of list
 print(len(lis1)) #it will print total number of element present in lis1
 print(len(name))
+
+#count the occurance of element
+book_lis = ["keep", "door", "knok knok", "door", "keep", "keep"]
+value = book_lis.count("keep")  #keep is apeared 3 time
+print(value)
+
+value = book_lis.count(book_lis[1])
+print(value)
+
+#deleting a list
+del lis1   #it will delete the lis1 list
+# print(lis1)
+
+#clear the list or empty the list
+book_lis.clear()  #it will remove all the element of list
+print(book_lis)
+
+book_lis = ["keep", "door", "knok knok", "door", "keep", "keep"]
+book_lis.pop()  #by default it will remove last element
+print(book_lis)
+
+book_lis.pop()  #by default it will remove last element
+print(book_lis)
+
+book_lis.pop(2) #it will remove the element of 2 index
+print(book_lis)
+
+#list comprehension
+prices = [10, 20, 30, 40, 50]
+double_price = [price *2 for price in prices]  #this is a sort way to copy the element in different list using condition
+print(double_price)
+
+double_price = [(price * 2)/ 5 for price in prices] #it will first make each price to double then it will divide it by 5 then ii will store in list
+print(double_price)
+
+names = ['jittu', 'kittu', 'mittu', 'chittu']
+cap_nam = [name.capitalize() for name in names] #it will make each name in capitalize form
+print(cap_nam)
+
+#store the square of each number
+number = [1, 2, 3, 4, 5, 6]
+square_lis = [num**2 for num in number] #it will make square of each number and store it in square_lis
+print(square_lis)
+
+#splitting the list names
+file_lis = ['name.docs', 'view.txt', 'uncode.img', 'cartton.mp4']
+extension = [str.split(".")[-1] for str in file_lis] #it will split the names with . and then get the second value
+print(extension)
+
+#conditional list comprehension
+email_lis = ['jittu1@gmail.com', 'jittu2@yahoo.com', 'jittu3@gmail.com', 'jittu4@yahoo.com', 'jittu5@yahoo.com']
+only_yahoo = [email for email in email_lis if email.endswith('yahoo.com')] #it will only add email which ends with yahoo.com
+print(only_yahoo)
+
+strings = ['heelo', 'eorlds', 'jksuren', 'namememe', 'coooool']
+big_str = [stri for stri in strings if(len(stri) > 6)]  #it will only include values whose length is greater than 6
+print(big_str)
