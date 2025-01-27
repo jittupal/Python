@@ -177,3 +177,7 @@ print(only_yahoo)
 strings = ['heelo', 'eorlds', 'jksuren', 'namememe', 'coooool']
 big_str = [stri for stri in strings if(len(stri) > 6)]  #it will only include values whose length is greater than 6
 print(big_str)
+
+#nested list comprehension
+pairs = [[x, y] for x in [1, 2, 3] for y in [4, 5, 6]]  #it will make the list of pairs of numbers eg. [1,4] [1, 5], [1, 6]
+print(pairs)
