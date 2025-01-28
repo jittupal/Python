@@ -181,3 +181,65 @@ print(big_str)
 #nested list comprehension
 pairs = [[x, y] for x in [1, 2, 3] for y in [4, 5, 6]]  #it will make the list of pairs of numbers eg. [1,4] [1, 5], [1, 6]
 print(pairs)
+
+# Create an empty stack using a list
+stack = []  # Initializing an empty list to use as a stack
+
+# Push elements onto the stack
+stack.append(1)  # Add the first element (1) to the stack
+stack.append(2)  # Add the second element (2) to the stack
+stack.append(3)  # Add the third element (3) to the stack
+print("Stack after pushing elements:", stack)  # Display the stack after all pushes
+
+# Pop elements from the stack
+popped_element = stack.pop()  # Remove the top element from the stack (Last In, First Out)
+print("Popped element:", popped_element)  # Display the popped element
+print("Stack after popping:", stack)  # Display the stack after the pop operation
+
+# Check if the stack is empty
+if not stack:  # If the stack is empty, print a message
+    print("Stack is empty")
+else:  # If the stack is not empty, print a different message
+    print("Stack is not empty")
+
+# Browsing data example - a stack of browsing history
+browsing_data = ["home", "menu", "contact", "search"]  # List representing browsing history (stack)
+
+browsing_data.pop()  # Remove the last element added (LIFO behavior: "search" will be removed first)
+print(browsing_data)  # Display browsing data after the pop operation
+
+# Queue implementation using deque
+from collections import deque  # Importing deque for queue functionality
+
+checkout = deque()  # Initializing an empty deque to use as a queue
+
+# Add customers to the queue
+checkout.append('cus1')  # Add the first customer
+checkout.append('cus2')  # Add the second customer
+checkout.append('cus3')  # Add the third customer
+checkout.append('cus4')  # Add the fourth customer
+checkout.append('cus5')  # Add the fifth customer
+
+# First In, First Out (FIFO) operation
+while checkout:  # Continue as long as the queue is not empty
+    customer = checkout.popleft()  # Remove the first customer from the queue
+    print("serving", customer)  # Serve the customer and display their name
+
+# Queue implementation using the Queue module
+from queue import Queue  # Importing the Queue class from the queue module
+
+print_queue = Queue()  # Initialize an empty queue
+
+# Add print jobs to the queue
+print_queue.put("print 1st pdf")  # Add the first print job to the queue
+print_queue.put("print 2nd pdf")  # Add the second print job to the queue
+print_queue.put("print 3rd pdf")  # Add the third print job to the queue
+print_queue.put("print 4th pdf")  # Add the fourth print job to the queue
+print_queue.put("print 5th pdf")  # Add the fifth print job to the queue
+
+# Process the print queue
+while not print_queue.empty():  # Continue as long as the queue is not empty
+    print_job = print_queue.get()  # Get the next print job from the queue (FIFO behavior)
+    print('printing', print_job)  # Display the print job being processed
+
+
