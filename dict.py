@@ -35,3 +35,38 @@ for key, value in my_dict.items():
 
 print(my_dict.values())  #it will only print the value of dictionary 
 print(my_dict.keys()) #it will only print the keys of dictionary
+
+# Creating a dictionary named 'details' with some personal information
+details = {"name": "jittu", "age": 21, "phone": 21212121, "email": "jittupal@yahho.com"}
+
+# Printing the entire dictionary
+print(details)
+
+# Accessing and printing specific values using their keys
+print(details["name"])   # Prints the value associated with the key "name"
+print(details["email"])  # Prints the value associated with the key "email"
+
+# Adding new key-value pairs to the dictionary
+details["address"] = "mp"   # Adding an address field
+details["student"] = "yes"  # Indicating if the person is a student
+
+# Modifying an existing value in the dictionary
+details["name"] = "kittu"   # Changing the name from "jittu" to "kittu"
+
+# Printing the updated dictionary
+print(details)
+
+# Creating another dictionary with different key types (float, boolean, complex number, and string)
+new_dict = {1.2: "jittu", True: "student", 2+3j: "complex", "elgible": "yes"}
+
+# Accessing and printing values using their respective keys
+print(new_dict[1.2])    # Prints the value for key 1.2 (float)
+print(new_dict[True])   # Prints the value for key True (boolean)
+
+# The below line is commented out because it would cause an error.
+# Dictionary keys must be immutable (unchangeable types like strings, numbers, or tuples),
+# but sets are mutable, so they cannot be used as dictionary keys.
+# new_dict = {{1, 2, 3}: "ajay"}
+
+# Printing the dictionary
+print(new_dict)
