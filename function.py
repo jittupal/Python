@@ -134,10 +134,10 @@ print(sum4)
 
 def add_two_num():
     # Function to take two user inputs and print their sum
-    a = int(input("Enter first number:  "))
+    #a = int(input("Enter first number:  "))
     print()
-    b = int(input("Enter Second number: "))
-    print("Sum of a and b is:  ", a + b)
+    #b = int(input("Enter Second number: "))
+    #print("Sum of a and b is:  ", a + b)
 
 add_two_num()
 
@@ -169,3 +169,59 @@ def add_list(a):
 
 n = add_list([1, 3, 6, "jittu", 4, "pal", [5, 0, 3, 9]])
 print(n)  # Output: [1, 3, 6, 4, 5, 0, 3, 9]
+
+# Function to calculate the sum of any number of arguments
+def any_sum(*args):
+    sum = 0  # Initialize sum variable
+    for i in args:  # Iterate through all arguments
+        sum = sum + i  # Add each argument to sum
+    return sum  # Return the final sum
+
+# Calling the function with different sets of numbers
+sum_of_arguments = any_sum(3, 4, 8, 2)
+print(sum_of_arguments)  # Output: 17
+
+sum_of_arguments = any_sum(3, 4, 2)
+print(sum_of_arguments)  # Output: 9
+
+sum_of_arguments = any_sum(3, 4)
+print(sum_of_arguments)  # Output: 7
+
+
+# Function to filter and return only the list arguments
+def return_list(*args):
+    l = []  # Initialize an empty list
+    for i in args:  # Iterate through all arguments
+        if type(i) == list:  # Check if the argument is of type list
+            l.append(i)  # Append the list to 'l'
+    return l  # Return the list containing only lists
+
+# Calling the function with mixed types of arguments
+lists = return_list(2, 4, [1, 2, 4, 6], "jittu", "pal", [4, 2, 8], {3, 4, 2}, {"jittu": "pal", "kittu": "pal"}, [3, 5, 8, 9])
+print(lists)  # Output: [[1, 2, 4, 6], [4, 2, 8], [3, 5, 8, 9]]
+
+
+# Function to calculate the sum of elements in a list
+def total_sum(a):
+    sum = 0  # Initialize sum variable
+    for i in a:  # Iterate through the list
+        sum = sum + i  # Add each element to sum
+    return sum  # Return the total sum
+
+# Function to calculate total marks from given subject marks
+def marks_in_subject(**kwargs):  # Accepts keyword arguments (subject=marks)
+    def total_marks(marks_list):
+        return total_sum(marks_list)  # Calls total_sum to get the sum of marks
+    
+    marks_list = []  # Initialize an empty list to store marks
+    for sub, marks in kwargs.items():  # Iterate through subjects and marks
+        marks_list.append(marks)  # Append marks to the list
+    
+    return total_marks(marks_list)  # Return the total marks
+
+# Calling the function with subject marks
+ans = marks_in_subject(a=10, b=40)
+print(ans)  # Output: 50
+
+ans = marks_in_subject(a=10, b=40, c=60)
+print(ans)  # Output: 110
