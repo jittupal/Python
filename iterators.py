@@ -34,4 +34,4 @@ print(next(ss))  # Prints another random value
 # Iterating over a dictionary returns keys by default.
 d = iter({"jittu": "pal", "kittu": "pal"})  
 print(next(d))  # Prints the first key (e.g., "jittu")
-print(next(d))  # Prints the second key (e.g., "kittu")
+print(next(d))  # Prints the second key (e.g., "kitttu")
