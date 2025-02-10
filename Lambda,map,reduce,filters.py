@@ -102,3 +102,42 @@ def mul(x):
 
 mul_list = list(map(mul, l))
 print(mul_list)  # Output: [2, 4, 6, 8, 10, 12]
+
+
+# Using lambda with map  
+# map() applies a function to all items in an iterable (list, tuple, etc.)
+
+l = [1, 2, 3, 4, 5]  # Sample list
+
+# Squaring each element in the list
+squ = list(map(lambda x: x**2, l))
+print(squ)  # Output: [1, 4, 9, 16, 25]
+
+# Adding 10 to each element in the list
+add_lists = list(map(lambda x: x + 10, l))
+print(add_lists)  # Output: [11, 12, 13, 14, 15]
+
+# Multiplying each element by 10
+mul_lists = list(map(lambda x: x * 10, l))
+print(mul_lists)  # Output: [10, 20, 30, 40, 50]
+
+# Adding corresponding elements of two lists
+l1 = [10, 12, 14, 16, 18]
+l2 = [20, 22, 24, 26, 28]
+add_lists_num = list(map(lambda x, y: x + y, l1, l2))
+print(add_lists_num)  # Output: [30, 34, 38, 42, 46]
+
+# Converting each character of a string to uppercase
+s = "jittupal"
+upper_case = list(map(lambda x: x.upper(), s))
+print(upper_case)  # Output: ['J', 'I', 'T', 'T', 'U', 'P', 'A', 'L']
+
+# Capitalizing each word in a list
+words = ["jittu", "python", "notnow"]
+capi = list(map(str.capitalize, words))
+print(capi)  # Output: ['Jittu', 'Python', 'Notnow']
+
+# Converting grades to numerical values
+grades = ["A", "B", "C", "D"]
+ans = list(map(lambda grade: 4 if grade == "A" else (3 if grade == "B" else 2), grades))
+print(ans)  # Output: [4, 3, 2, 2]
