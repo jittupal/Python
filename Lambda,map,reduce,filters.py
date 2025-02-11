@@ -141,3 +141,39 @@ print(capi)  # Output: ['Jittu', 'Python', 'Notnow']
 grades = ["A", "B", "C", "D"]
 ans = list(map(lambda grade: 4 if grade == "A" else (3 if grade == "B" else 2), grades))
 print(ans)  # Output: [4, 3, 2, 2]
+
+
+# Importing reduce function from functools module
+from functools import reduce  
+
+# Example 1: Sum of all elements in a list  
+a = [2, 4, 6, 8, 9, 3]
+answer = reduce(lambda x, y: x + y, a)  # Adds elements one by one
+print(answer)  # Output: 32 (2+4+6+8+9+3)
+
+# Example 2: Multiplication of all elements in a list  
+answer = reduce(lambda x, y: x * y, a)  # Multiplies elements one by one
+print(answer)  # Output: 10368 (2*4*6*8*9*3)
+
+# Example 3: Concatenation of strings in a list  
+strings = ["Data", "Science", "Course"]
+answ = reduce(lambda x, y: x + " " + y, strings)  # Joins words with space
+print(answ)  # Output: "Data Science Course"
+
+# Example 4: Finding the maximum number in a list  
+numbers = [1, 3, 5, 7, 99999, 100, 9, 3, 10000]
+sol = reduce(lambda x, y: x if x > y else y, numbers)  # Keeps the larger value
+print(sol)  # Output: 99999 (largest number in the list)
+
+# Example 5: Calculating factorial of a number using reduce  
+def factorial(n):
+    return reduce(lambda x, y: x * y, range(1, n + 1))  # Multiplies all numbers from 1 to n
+
+# Factorial of 5 (5! = 5*4*3*2*1)
+anss = factorial(5)
+print(anss)  # Output: 120
+
+# Factorial of 9 (9! = 9*8*7*6*5*4*3*2*1)
+anss = factorial(9)
+print(anss)  # Output: 362880
+
