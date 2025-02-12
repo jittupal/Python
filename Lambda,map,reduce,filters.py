@@ -176,3 +176,58 @@ print(anss)  # Output: 120
 # Factorial of 9 (9! = 9*8*7*6*5*4*3*2*1)
 anss = factorial(9)
 print(anss)  # Output: 362880
+
+# The `filter` function in Python is used to filter elements from an iterable based on a condition.
+# It takes two arguments: a function and an iterable.
+# The function should return True for elements that should be included in the result.
+
+c = [2, 3, 5, 6, 8, 9, 1]
+
+# Filtering even numbers from the list
+even_no = list(filter(lambda x: x % 2 == 0, c))  
+print(even_no)  # Output: [2, 6, 8]
+
+# Filtering odd numbers from the list
+odd_no = list(filter(lambda x: x % 2 != 0, c))  
+print(odd_no)  # Output: [3, 5, 9, 1]
+
+c1 = [-2, -1, 9, -3, -4, 6, 8]
+
+# Filtering negative numbers from the list
+neg_no = list(filter(lambda x: x < 0, c1))  
+print(neg_no)  # Output: [-2, -1, -3, -4]
+
+# Filtering positive numbers from the list
+pos_no = list(filter(lambda x: x > 0, c1))  
+print(pos_no)  # Output: [9, 6, 8]
+
+s1 = ["jittu", "pal", "mittu", "neha", "sneha", "devkinandan"]
+
+# Filtering strings with length greater than 4
+gre_4 = list(filter(lambda x: len(x) > 4, s1))  
+print(gre_4)  # Output: ['jittu', 'mittu', 'sneha', 'devkinandan']
+
+# Using a normal function instead of a lambda function
+def check_even(num):
+    if num % 2 == 0:  # Checking if the number is even
+        return True
+    return False
+
+num = [2, 3, 6, 4, 7, 9, 1, 8]
+
+# Filtering even numbers using the defined function
+check = list(filter(check_even, num))  
+print(check)  # Output: [2, 6, 4, 8]
+
+
+words = ["apple", "banana", "grape", "mango", "kiwi"]
+
+# Filtering words that contain the letter 'a'
+words_with_a = list(filter(lambda x: 'a' in x, words))
+print(words_with_a)  # Output: ['apple', 'banana', 'grape', 'mango']
+
+numbers = [10, 25, 30, 45, 50, 60]
+
+# Filtering numbers that are divisible by 5
+div_by_5 = list(filter(lambda x: x % 5 == 0, numbers))
+print(div_by_5)  # Output: [10, 25, 30, 45, 50, 60]
