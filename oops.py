@@ -10,13 +10,13 @@ class Car:
 
 # Creating an object (instance) of the Car class
 c1 = Car()
-print(c1.accelerate())  # Calls the accelerate method for c1
+c1.accelerate()  # Calls the accelerate method for c1
 
 # Creating another instance of the Car class
 c2 = Car()
-print(c2.accelerate())  # Calls the accelerate method for c2
+c2.accelerate()  # Calls the accelerate method for c2
 
 # Creating a third instance of the Car class
 c3 = Car()
-print(c3.accelerate())  # Calls the accelerate method for c3
-print(c3.brake())  # Calls the brake method for c3
+c3.accelerate()  # Calls the accelerate method for c3
+c3.brake()  # Calls the brake method for c3
