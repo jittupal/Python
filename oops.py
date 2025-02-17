@@ -59,3 +59,56 @@ b.withdraw(3000)  # New balance = 15000 - 3000 = 12000
 
 # Check remaining balance
 b.remain()  # Prints: Available balance is 12000 money
+
+
+# Class to perform operations on a list
+class Listops:
+    def __init__(self, l):
+        # Initialize the class with a list
+        self.l = l
+
+    # Method to extract even numbers from a given list
+    def extract_eve(self, l):
+        l1 = []  # Create an empty list to store even numbers
+        for i in l:  # Loop through each element in the list
+            if i % 2 == 0:  # Check if the number is even
+                l1.append(i)  # Add even number to the list
+        return l1  # Return the list of even numbers
+
+    # Method to extract odd numbers from a given list
+    def extract_odd(self, l):
+        l2 = []  # Create an empty list to store odd numbers
+        for i in l:  # Loop through each element in the list
+            if i % 2 != 0:  # Check if the number is odd
+                l2.append(i)  # Add odd number to the list
+        return l2  # Return the list of odd numbers
+
+# Creating an object of Listops with a given list
+ops = Listops([2, 3, 4, 5, 6, 7, 8, 9])
+
+# Printing the original list
+print("Original list:", ops.l)
+
+# Extracting and printing even numbers from the list
+print("Even numbers:", ops.extract_eve(ops.l))
+
+# Extracting and printing odd numbers from the list
+print("Odd numbers:", ops.extract_odd(ops.l))
+
+# Extracting even numbers from another list
+print("Even numbers from [2, 6, 9, 4, 1]:", ops.extract_eve([2, 6, 9, 4, 1]))
+
+# Extracting even numbers from another list (incorrect function used, should be extract_odd)
+print("Odd numbers from [5, 7, 9, 3, 1]:", ops.extract_odd([5, 7, 9, 3, 1]))  # Fixed function call
+
+# Creating another object with a different list
+ops1 = Listops([2, 3, 6, 7, 9, 9, 5])
+
+# Printing the original list
+print("Original list:", ops1.l)
+
+# Extracting and printing even numbers from the new list
+print("Even numbers:", ops1.extract_eve(ops1.l))
+
+# Extracting and printing odd numbers from the new list
+print("Odd numbers:", ops1.extract_odd(ops1.l))
