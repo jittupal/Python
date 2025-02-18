@@ -112,3 +112,29 @@ print("Even numbers:", ops1.extract_eve(ops1.l))
 
 # Extracting and printing odd numbers from the new list
 print("Odd numbers:", ops1.extract_odd(ops1.l))
+
+# Defining a class Book to represent book details dynamically
+class Book:
+    def __init__(self, name, author, title):
+        # Initializing attributes with dynamic values passed during object creation
+        self.name_of_book = name  # Storing book name
+        self.book_author = author  # Storing author name
+        self.title_name = title  # Storing book title
+
+    # Method to print book name and title
+    def extract_name_and_details(self):
+        print(self.name_of_book, self.title_name)
+
+    # Method to print book name and author
+    def extract_name_and_author(self):
+        print(self.name_of_book, self.book_author)
+
+# Creating an object of the Book class with specific book details
+student1 = Book("ML", "Murphy", "Linear_regression")
+student1.extract_name_and_details()  # Output: ML Linear_regression
+student1.extract_name_and_author()   # Output: ML Murphy
+
+# Creating another object of the Book class with different book details
+student2 = Book("stats", "joss", "descriptive_stats")
+student2.extract_name_and_author()   # Output: stats joss
+student2.extract_name_and_details()  # Output: stats descriptive_stats
