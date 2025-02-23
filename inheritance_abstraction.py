@@ -52,3 +52,42 @@ obj = Apple()
 # Calling methods from both child and parent classes
 obj.apple_info()  # Calls the method from Apple class
 obj.fruit_info()  # Calls the inherited method from Fruit class
+
+
+# Method Overriding Example in Python
+
+# Parent class
+class Fruit:
+    # Method in parent class
+    def fruit_info(self):
+        print("Inside Parent Class")
+
+# Child class inheriting from Fruit
+class Apple(Fruit):
+    # Overriding the fruit_info method from the parent class
+    def fruit_info(self):
+        # Calling the parent class method using super()
+        super().fruit_info()
+        print("Inside Child Class of Fruit Info")
+    
+    # Additional method specific to Apple class
+    def apple_info(self):
+        print("Inside Child Class - Apple Specific Info")
+
+# Creating an object of Apple class
+objs = Apple()
+objs.fruit_info()  # Calls overridden method
+
+# Example 2: Another subclass demonstrating method overriding
+class Mango(Fruit):
+    def fruit_info(self):
+        super().fruit_info()
+        print("Inside Mango Class - Fruit Info")
+
+    def mango_info(self):
+        print("Mango is known as the king of fruits.")
+
+# Creating an object of Mango class
+mango_obj = Mango()
+mango_obj.fruit_info()  # Calls overridden method
+mango_obj.mango_info()  # Calls class-specific method
