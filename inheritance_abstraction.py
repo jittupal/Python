@@ -175,3 +175,117 @@ s1 = SportsCar()
 s1.car_info()        # Accessing Car class method
 s1.sports_car_info() # Accessing SportsCar class method
 s1.vehicle_info()    # Accessing Vehicle class method
+
+#multiple inheritance
+# Multiple Inheritance in Python
+# Definition: Multiple inheritance is a feature where a class can inherit 
+# attributes and methods from more than one parent class.
+
+# Example 1: Basic Multiple Inheritance
+
+# Parent Class 1
+class Parent1:
+    """This is the first parent class with a method."""
+    def method1(self):
+        print("Method from Parent1")
+
+# Parent Class 2
+class Parent2:
+    """This is the second parent class with a method."""
+    def method2(self):
+        print("Method from Parent2")
+
+# Child Class inheriting from both Parent1 and Parent2
+class Child(Parent1, Parent2):
+    """This child class inherits from both Parent1 and Parent2."""
+    def method3(self):
+        print("Method from Child")
+
+# Creating an object of Child class
+obj = Child()
+
+# Calling methods from both parent classes and child class
+obj.method1()  # Inherited from Parent1
+obj.method2()  # Inherited from Parent2
+obj.method3()  # Defined in Child class
+
+print("\n")
+
+# Example 2: Using super() with Multiple Inheritance
+
+# Parent Class 1
+class Animal:
+    """This class represents animals with a sound method."""
+    def sound(self):
+        print("Animals make sounds")
+
+# Parent Class 2
+class Bird:
+    """This class represents birds with a fly method."""
+    def fly(self):
+        print("Birds can fly")
+
+# Child Class inheriting from both Animal and Bird
+class Bat(Animal, Bird):
+    """This child class inherits from both Animal and Bird."""
+    def info(self):
+        print("Bats are mammals but can fly")
+
+# Creating an object of Bat class
+bat = Bat()
+bat.sound()  # Inherited from Animal
+bat.fly()    # Inherited from Bird
+bat.info()   # Defined in Bat class
+
+print("\n")
+
+# Example 3: Handling Name Conflicts in Multiple Inheritance
+
+# Parent Class 1
+class ClassA:
+    """This is the first parent class with a show method."""
+    def show(self):
+        print("ClassA method")
+
+# Parent Class 2
+class ClassB:
+    """This is the second parent class with a show method."""
+    def show(self):
+        print("ClassB method")
+
+# Child Class inheriting from both ClassA and ClassB
+class ClassC(ClassA, ClassB):
+    """This child class inherits from both ClassA and ClassB."""
+    pass
+
+# Creating an object of ClassC
+obj = ClassC()
+obj.show()  # Resolves based on the Method Resolution Order (MRO)
+
+print("\n")
+
+# Example 4: Using super() in Multiple Inheritance to Call Methods
+
+# Parent Class 1
+class Parent1:
+    """First parent class using super()."""
+    def show(self):
+        print("Parent1 method")
+        super().show()  # Calls next method as per MRO
+
+# Parent Class 2
+class Parent2:
+    """Second parent class with a show method."""
+    def show(self):
+        print("Parent2 method")
+
+# Child Class inheriting from both Parent1 and Parent2
+class Child(Parent1, Parent2):
+    """This child class inherits from both Parent1 and Parent2."""
+    def show(self):
+        print("Child method")
+        super().show()  # Calls Parent1's method
+
+# Creating an object of Child class
+obj = Child()
+obj.show()
