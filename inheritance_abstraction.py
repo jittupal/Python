@@ -289,3 +289,44 @@ class Child(Parent1, Parent2):
 # Creating an object of Child class
 obj = Child()
 obj.show()
+
+# Hierarchical Inheritance Example
+
+# Definition:
+# Hierarchical inheritance is a type of inheritance where multiple child classes inherit from a single parent class.
+# In this case, `Car` and `Truck` are both inheriting from the `Vehicle` class.
+
+# Base class (Parent class)
+class Vehicle:
+    def info(self):
+        print("This is a vehicle")
+
+# Derived class (Child class 1)
+class Car(Vehicle):
+    def car_info(self, name):
+        print("This is car info:", name)
+
+# Derived class (Child class 2)
+class Truck(Vehicle):
+    def truck_info(self, name):
+        print("This is truck info:", name)
+
+# Example 1: Creating an object of Car class
+c1 = Car()
+c1.info()  # Calling method from parent class
+c1.car_info("BMW")  # Calling method from child class
+
+# Example 2: Creating an object of Truck class
+t1 = Truck()
+t1.info()  # Calling method from parent class
+t1.truck_info("TATA")  # Calling method from child class
+
+# Additional Example: Another derived class inheriting from Vehicle
+class Bike(Vehicle):
+    def bike_info(self, name):
+        print("This is bike info:", name)
+
+# Example 3: Creating an object of Bike class
+b1 = Bike()
+b1.info()  # Calling method from parent class
+b1.bike_info("Yamaha")  # Calling method from child class
