@@ -330,3 +330,53 @@ class Bike(Vehicle):
 b1 = Bike()
 b1.info()  # Calling method from parent class
 b1.bike_info("Yamaha")  # Calling method from child class
+
+# Hybrid Inheritance in Python
+# Hybrid inheritance is a combination of two or more types of inheritance.
+# It helps in reusing code but can introduce complexity due to multiple inheritance.
+
+# Base class
+class Vehicle:
+    def vehicle_info(self):
+        print("Inside Vehicle Class")
+
+# Derived class inheriting from Vehicle (Single Inheritance)
+class Car(Vehicle):
+    def car_info(self):
+        print("Inside Car Class")
+
+# Another derived class inheriting from Vehicle (Single Inheritance)
+class Truck(Vehicle):
+    def truck_info(self):
+        print("Inside Truck Class")
+
+# Hybrid Inheritance:
+# Sports_car inherits from Car (which already inherits from Vehicle)
+# This creates a Hybrid Inheritance scenario where Vehicle is an indirect parent of Sports_car.
+class Sports_car(Car):
+    def sports_car_info(self):
+        print("Inside Sports Car Class")
+
+# Creating an object of Sports_car
+obj1 = Sports_car()
+
+# Calling methods
+obj1.car_info()        # Calls method from Car class
+obj1.vehicle_info()    # Calls method from Vehicle class (inherited by Car)
+obj1.sports_car_info() # Calls method from Sports_car class
+
+# Additional Example
+
+# Another class that inherits from both Car and Truck (Multiple Inheritance)
+class MultiPurposeVehicle(Car, Truck):
+    def mpv_info(self):
+        print("Inside Multi-Purpose Vehicle Class")
+
+# Creating an object of MultiPurposeVehicle
+obj2 = MultiPurposeVehicle()
+
+# Calling methods from all parent classes
+obj2.mpv_info()        # Calls method from MultiPurposeVehicle class
+obj2.car_info()        # Calls method from Car class
+obj2.truck_info()      # Calls method from Truck class
+obj2.vehicle_info()    # Calls method from Vehicle class (inherited by Car and Truck)
