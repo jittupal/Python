@@ -380,3 +380,99 @@ obj2.mpv_info()        # Calls method from MultiPurposeVehicle class
 obj2.car_info()        # Calls method from Car class
 obj2.truck_info()      # Calls method from Truck class
 obj2.vehicle_info()    # Calls method from Vehicle class (inherited by Car and Truck)
+
+
+# Abstraction in Python
+# Abstraction is a concept in object-oriented programming that hides the implementation details 
+# and only shows the necessary functionality. It is achieved using abstract classes and methods.
+
+import abc  # Importing the abc module to work with abstract classes
+
+# Creating an Abstract Class
+class Rgpv:
+    @abc.abstractmethod  # Declaring an abstract method
+    def student_details(self):
+        pass
+
+    @abc.abstractmethod
+    def student_assignments(self):
+        pass
+
+    @abc.abstractmethod
+    def student_marks(self):
+        pass
+
+# Concrete Class that Implements the Abstract Class
+class Jittu(Rgpv):
+    def student_details(self):
+        print("Student Name: Jittu Pal")
+    
+    def student_assignments(self):
+        print("Assignments: Submitted on time")
+
+    def student_marks(self):
+        print("Marks: Jittu got 89%")
+
+# Another Concrete Class Implementing the Abstract Class
+class Friend(Rgpv):
+    def student_details(self):
+        print("Student Name: Ajay")
+    
+    def student_assignments(self):
+        print("Assignments: Not submitted")
+    
+    def student_marks(self):
+        print("Marks: He got 88%")
+
+# Creating objects and calling methods
+j = Jittu()
+j.student_details()
+j.student_assignments()
+j.student_marks()
+
+f = Friend()
+f.student_details()
+f.student_assignments()
+f.student_marks()
+
+# Another example of Abstraction using Shapes
+class Shape:
+    @abc.abstractmethod  # Abstract method for calculating area
+    def calculate_area(self):
+        pass
+
+# Rectangle class implementing the abstract method
+class Rectangle(Shape):
+    def __init__(self, length, breadth):
+        self.length = length
+        self.breadth = breadth
+    
+    def calculate_area(self):
+        print(f"Area of Rectangle: {self.length * self.breadth}")
+
+# Circle class implementing the abstract method
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    
+    def calculate_area(self):
+        print(f"Area of Circle: {3.14 * self.radius ** 2}")
+
+# Triangle class as an additional example
+class Triangle(Shape):
+    def __init__(self, base, height):
+        self.base = base
+        self.height = height
+    
+    def calculate_area(self):
+        print(f"Area of Triangle: {0.5 * self.base * self.height}")
+
+# Creating objects and calling methods
+rect = Rectangle(10, 5)
+rect.calculate_area()
+
+c = Circle(7)
+c.calculate_area()
+
+tri = Triangle(6, 4)
+tri.calculate_area()
