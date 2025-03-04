@@ -190,3 +190,108 @@ sparrow.fly()  # Calls the overridden method in Sparrow class
 
 penguin = Penguin()
 penguin.fly()  # Calls the overridden method in Penguin class
+
+
+# Encapsulation in Python
+
+# Definition:
+# Encapsulation is one of the core principles of Object-Oriented Programming (OOP).
+# It is used to restrict direct access to variables and methods to prevent unintended modifications.
+# Encapsulation is implemented using access modifiers like public and private.
+
+# ---------------- PUBLIC ACCESS ----------------
+# Public attributes can be accessed directly outside the class.
+
+class Student:
+    # Constructor to initialize student name and degree
+    def __init__(self, name, degree):
+        self.name = name  # Public attribute
+        self.degree = degree  # Public attribute
+
+# Creating student objects
+stud1 = Student("Jittu", "CS")
+stud2 = Student("Kittu", "EE")
+
+# Accessing public attributes
+print(stud1.name)  # Output: Jittu
+print(stud1.degree)  # Output: CS
+
+print(stud2.name)  # Output: Kittu
+print(stud2.degree)  # Output: EE
+
+# Public attributes can be modified outside the class
+stud2.degree = "IT"  # Changing the degree of stud2
+print(stud2.degree)  # Output: IT
+
+# Example with a method inside the class
+class Student:
+    def __init__(self, name, degree):
+        self.name = name  # Public attribute
+        self.degree = degree  # Public attribute
+
+    # Public method to display student details
+    def show(self):
+        print("Name:", self.name, "Degree:", self.degree)
+
+# Creating an object
+aj = Student("Ajay", "CS")
+aj.show()  # Output: Name: Ajay Degree: CS
+
+# Accessing public attributes
+print(aj.name)   # Output: Ajay
+print(aj.degree) # Output: CS
+
+
+# ---------------- PRIVATE ACCESS ----------------
+# Private attributes are indicated by a double underscore ( __ )
+# They cannot be accessed directly outside the class.
+
+class Student:
+    def __init__(self, name, degree):
+        self.name = name  # Public attribute
+        self.__degree = degree  # Private attribute
+
+    # Public method to display student details
+    def show(self):
+        print("Name:", self.name, "Degree:", self.__degree)
+
+# Creating an object
+aj = Student("Ajay", "CS")
+aj.show()  # Output: Name: Ajay Degree: CS
+
+# Accessing public attribute
+print(aj.name)  # Output: Ajay
+
+# Trying to access private attribute directly (will cause an error)
+# print(aj.__degree)  # This will raise an AttributeError
+
+# Accessing private attribute using name mangling
+print(aj._Student__degree)  # Output: CS
+
+class User:
+    def __init__(self, username, password):
+        self.username = username  # Public Attribute
+        self.__password = password  # Private Attribute
+
+    # Method to check password (simulating login)
+    def check_password(self, input_password):
+        if self.__password == input_password:
+            print("Login successful!")
+        else:
+            print("Invalid password!")
+
+# Creating user object
+user1 = User("john_doe", "secure123")
+
+# Accessing public attribute
+print(user1.username)  # Output: john_doe
+
+# Trying to access private attribute (will cause an error)
+# print(user1.__password)  # This will cause an AttributeError
+
+# Checking password using method
+user1.check_password("secure123")  # Output: Login successful!
+user1.check_password("wrongpass")  # Output: Invalid password!
+
+# Accessing private attribute using name mangling (not recommended)
+print(user1._User__password)  # Output: secure123
