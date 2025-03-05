@@ -295,3 +295,109 @@ user1.check_password("wrongpass")  # Output: Invalid password!
 
 # Accessing private attribute using name mangling (not recommended)
 print(user1._User__password)  # Output: secure123
+
+#a method private
+class BankAccount:
+    def __init__(self, account_holder, balance):
+        self.account_holder = account_holder  # Public attribute
+        self.__balance = balance  # Private attribute
+
+    # Public method (accessible outside the class)
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+            self.__show_balance()  # Calling private method inside the class
+        else:
+            print("Deposit amount must be positive.")
+
+    def withdraw(self, amount):
+        if 0 < amount <= self.__balance:
+            self.__balance -= amount
+            self.__show_balance()  # Calling private method inside the class
+        else:
+            print("Invalid withdrawal amount!")
+
+    # Private method (only accessible within the class)
+    def __show_balance(self):
+        print(f"Updated Balance: {self.__balance}")
+
+# Creating a bank account
+acc = BankAccount("John", 1000)
+
+# Accessing public methods
+acc.deposit(500)  
+# Output: Updated Balance: 1500
+
+acc.withdraw(300)  
+# Output: Updated Balance: 1200
+
+# Trying to call private method directly (will cause an error)
+# acc.__show_balance()  # This will raise an AttributeError
+
+# Accessing private method using name mangling (not recommended)
+acc._BankAccount__show_balance()  # This works but should be avoided
+
+
+
+
+class Parent:
+    def __init__(self):
+        self.__private_var = "I am private"
+
+    def show(self):
+        print(self.__private_var)
+
+class Child(Parent):
+    def display(self):
+        # Trying to access private variable (will cause an error)
+        # print(self.__private_var)  # This will cause an AttributeError
+        print("Cannot access private variable directly")
+
+# Creating objects
+p = Parent()
+p.show()  # Output: I am private
+
+c = Child()
+c.display()  # Output: Cannot access private variable directly
+
+# Accessing private attribute using name mangling (not recommended)
+print(c._Parent__private_var)  # Output: I am private
+
+
+
+
+class Car:
+    def __init__(self, brand, speed):
+        self.brand = brand  # Public Attribute
+        self.__speed = speed  # Private Attribute
+
+    # Getter method to access speed
+    def get_speed(self):
+        return self.__speed
+
+    # Setter method to modify speed safely
+    def set_speed(self, new_speed):
+        if new_speed > 0:
+            self.__speed = new_speed
+            print(f"Speed updated to {self.__speed}")
+        else:
+            print("Speed must be positive!")
+
+# Creating a car object
+car1 = Car("Tesla", 120)
+
+# Accessing public attribute
+print(car1.brand)  # Output: Tesla
+
+# Trying to access private attribute (will cause an error)
+# print(car1.__speed)  # This will cause an AttributeError
+
+# Accessing private attribute using getter method
+print(car1.get_speed())  # Output: 120
+
+# Trying to modify private attribute directly (won't work)
+# car1.__speed = 150  # This creates a new public attribute instead of modifying the private one
+
+# Modifying speed using setter method
+car1.set_speed(180)  # Output: Speed updated to 180
+car1.set_speed(-50)  # Output: Speed must be positive!
