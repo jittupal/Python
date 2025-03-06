@@ -401,3 +401,46 @@ print(car1.get_speed())  # Output: 120
 # Modifying speed using setter method
 car1.set_speed(180)  # Output: Speed updated to 180
 car1.set_speed(-50)  # Output: Speed must be positive!
+
+
+# Protected Members in Python
+
+# Definition:
+# - Protected members are defined using a single underscore (_) before the variable or method name.
+# - They can be accessed inside the class and in derived (child) classes.
+# - They should not be accessed directly outside the class (by convention), though it is technically possible.
+
+# Parent class
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name  # Public attribute
+        self._salary = salary  # Protected attribute
+
+    # Protected method (can be accessed in child class)
+    def _show_salary(self):
+        print(f"Salary of {self.name} is {self._salary}")
+
+# Child class (inherits Employee)
+class Manager(Employee):
+    def __init__(self, name, salary, department):
+        super().__init__(name, salary)  # Inheriting from Employee class
+        self.department = department  # New attribute in child class
+
+    def display_info(self):
+        print(f"Manager: {self.name}, Department: {self.department}")
+        self._show_salary()  # Accessing protected method
+
+# Creating an object of the child class
+mgr = Manager("Alice", 75000, "HR")
+
+# Accessing protected attribute (not recommended, but possible)
+print(mgr._salary)  #  Works but should be avoided
+
+# Accessing protected method inside child class
+mgr.display_info()
+# Output:
+# Manager: Alice, Department: HR
+# Salary of Alice is 75000
+
+# Trying to access protected method outside the class
+mgr._show_salary()  #  Works, but should be avoided
